@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .discription{
+            float: left;
+            flex-wrap: wrap;
+            margin-top: calc(100% - 1050px);
+            margin-left: 50px;
+        }
+        .imagesofmens{
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 20px; /* Space between images */
+         /* Account for the categories section */
+            width:900px ;
+            margin-right: 50px;
+            float: right;
+        }
+        .ima {
+            width: 200px;
+            text-align: center; /* Center text inside the block */
+        }
+        .ima img{
+            flex-wrap: wrap;
+            width: 100%; /* Make the image fill its container */
+            height: 200px;
+            object-fit: cover;
+        }
+        a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color:rgb(50, 157, 202);
+        width: max-content;
+
+    }
+   .ima:hover{
+    background-color:cornsilk;
+
+   }
+   .details {
+            display: none; /* Hide details initially */
+            position: fixed; /* Position fixed to center on screen */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the div */
+            width: 500px;
+            height: auto;
+            background-color:white;
+            padding: 20px;
+            z-index: 100; /* Make sure it's on top */
+            border-radius: 10px; /* Optional: Rounded corners */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(12, 0, 0, 0.7);
+            z-index: 50;
+        }
+        .goBackBtn {
+            margin-bottom: 10px;
+        }
+        .discprice{
+            float: right;
+            margin-right: 100px;
+            margin-top: 50px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        .details{
+            display: none;
+            position:fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: auto;
+            background-color: azure;
+            padding: 20px;
+            z-index: 100;
+            border-radius: 10px;
+        }
+        .cartDetails {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            background-color: azure;
+            padding: 20px;
+            z-index: 100;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-height: 500px;  /* Set maximum height */
+            overflow-y: auto; 
+        }
+       
+        .discprice {
+            float: right;
+            margin-right: 100px;
+            margin-top: 50px;
+        }
+        .cartItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cartItem img {
+            width: 100px;
+            height: 100px;
+        }
+        .remove-btn {
+            cursor: pointer;
+            color: red;
+        }
+        /* Styling for total price */
+        #totalPrice {
+            font-size: 18px;
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+<link rel="stylesheet" href="ffal.css">
+</head>
+<body>
+        <div class="discription">
+         <pre><h1>Only,
+For kids</h1><hr><h2>Add your favourite
+ to the cart
+</h2></pre>
+<h3>Show cart:</h3>
+            <a href="#" onclick="showCart()"><img src="cart.jpeg" alt="cart" style="height: 60px;width: 60px;"></a>
+        </div>
+        <div class="imagesofmens">
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+            <a href="#"onclick="showDetails('cop.jpeg', 'Colorful Planet Printed T-SHIRT THD - pepperstreets',19.0)"><div class="ima">
+                <img src="cop.jpeg" alt="Shirt 2">
+                <p>Colorful Planet Printed T-SHIRT THD - pepperstreets</p>
+                <h3>$19.90</h3>
+            </div></a>
+
+        </div>
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Details Section -->
+        <div class="details" id="detailsSection">
+            <button class="goBackBtn" id="goBackBtn" onclick="hideDetails()">←</button>
+            <h3 style="text-align: center; text-decoration: underline;">Description</h3>
+            <img src="" alt="shirt img" id="gejebaw" style="height: 200px;width: 200px;">
+            <div class="discprice">
+                <p id="description"></p>
+                <p id="price"></p> <!-- Price element added -->
+                <form id="loginForm">
+                    <h2>Select size: 
+                        <select id="choices">
+                            <option value="Size">Select Size</option>
+                            <option value="XX">XX</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="L">L</option>
+                        </select>
+                    </h2>
+                    <h2>Select color:
+                        <select id="colorChoices">
+                            <option value="none">Select Color</option>
+                            <option value="red" style="background-color: red; color: white;">Red</option>
+                            <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                            <option value="green" style="background-color: green; color: white;">Green</option>
+                            <option value="black" style="background-color: black; color: white;">Black</option>
+                            <option value="white" style="background-color: white;color: black;">White</option>
+                        </select>
+                    </h2>
+                    <input type="submit" value="Add to cart" id="sub" style="text-align: center;">
+                </form>
+            </div>
+            
+            <h4 id="message"></h4>
+        </div>
+        
+    
+        <!-- Cart Details Section -->
+        <div class="cartDetails" id="cartDetailsSection">
+            <button class="goBackBtn" onclick="hideCart()">←</button>
+            <h3 style="text-align: center; text-decoration: underline;">Cart Items</h3>
+            <div id="cartItems"></div>
+            <hr>
+            <p id="totalPrice"></p> <!-- Total price element added -->
+            <a href="#" onclick="showPaymentCard()"><button style="float: right;width: 200px;height: 50px;" onclick="">Payment method</button></a>
+        </div>
+        <form id="payform">
+            <div class="paymentcard" id="paymentcardsection">
+                <div class="payment">
+                    <h3 style="float: left;">Add a credit or debit card </h3> 
+                    <button class="close-button" onclick="closePaymentCard()" style="float: right;width: 40px;">X</button>
+                </div>
+                <div class="cardnum">
+                    <br><br>
+                    <label for="">Card number</label>&nbsp;&nbsp;<input type="text"><br><br>
+                    <label for="">Name on card</label>&nbsp;&nbsp;<input type="text"><br><br>
+                    <label for="">Expiration date </label>&nbsp;&nbsp;
+                        <select>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select id="year" name="year">
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            <option value="2033">2033</option>
+                            <option value="2034">2034</option>
+                            <option value="2035">2035</option>
+                            <option value="2036">2036</option>
+                            <option value="2037">2037</option>
+                            <option value="2038">2038</option>
+                            <option value="2039">2039</option>
+                            <option value="2040">2040</option>
+                            <option value="2041">2041</option>
+                            <option value="2042">2042</option>
+                            <option value="2043">2043</option>
+                            <option value="2044">2044</option>
+                        </select><br><br>
+                        <label for="">Security Code <small>(CVV/CVC)</small></label>&nbsp;&nbsp;<input type="number" maxlength="4" required><br><a href="#" class="hover-link" id="hoverLink" style="color:blue;">&nbsp;(What's this)</a>
+                        <div class="hover-info" id="hoverInfo">
+                            <img id="hoverImage" src="articles_cvc (1).jpeg" alt="Description Image">
+                            <p id="hoverDescription">The CVV number is the last three digits at the back of your card. For American Express cards, the CVV is a 4-digit number on the front of the card.</p>
+                        </div>
+                </div>
+                <div class="imgcards">
+                    <p>We accept all these cards:</p><br>
+                   <pre> <img src="visa.jpeg" alt="visa" style="width: 40px;height: 40px;">&nbsp;<img src="mastercard.jpeng.jpeg" alt="mastercard" style="width: 40px;height: 40px;">&nbsp;<img src="Americanexpress.png" alt="Americanexpress" style="width: 40px;height: 40px;">&nbsp;</pre>
+                </div>
+                <div class="clsfrcards">
+                    <button>Cancel</button>
+                    <input id="Addcardbtn"  type="button" style="background-color: yellowgreen; border-radius: 25%;height: 40px;" value="Add your card">
+                </div>
+            </div>
+            <script>
+                // Load cart from local storage on page load
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];  // Use existing cart or initialize empty array
+            
+                function showDetails(image, desc, price) {
+                    document.getElementById('gejebaw').src = image;
+                    document.getElementById('description').innerText = desc;
+                    document.getElementById('price').innerText = "Price: $" + price; // Display price in details section
+                    document.getElementById('detailsSection').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+            
+                    // Store price temporarily to add to cart later
+                    document.getElementById('loginForm').dataset.price = price;
+                }
+                function showPaymentCard() {
+                    document.getElementById('paymentcardsection').style.display = 'block';
+                }
+                function closePaymentCard() {
+                document.getElementById('paymentcardsection').style.display = 'none';
+                }
+                    
+            
+                function hideDetails() {
+                    document.getElementById('detailsSection').style.display = 'none';
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('message').innerText = '';
+                    document.getElementById('loginForm').reset();
+                }
+            
+                // Add event listener for form submission to add items to cart
+                document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let selectedSize = document.getElementById('choices').value;
+            let selectedColor = document.getElementById('colorChoices').value;
+            
+            if (selectedSize !== 'Size' && selectedColor !== 'none') {
+                let item = {
+                    image: document.getElementById('gejebaw').src,
+                    description: document.getElementById('description').innerText,
+                    price: document.getElementById('loginForm').dataset.price, // Include price
+                    size: selectedSize,
+                    color: selectedColor // Add selected color
+                };
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to local storage
+                document.getElementById('message').innerText = "Added to cart successfully!";
+            } else {
+                document.getElementById('message').innerText = "Please select both size and color.";
+            }
+            });
+            document.getElementById('hoverLink').addEventListener('mouseenter', function() {// Dynamically change image
+                document.getElementById('hoverDescription').innerText = 'The CVV number is the last three digits at the back of your card. For American Express cards, the CVV is a 4-digit number on the front of the card.'; // Change description
+            });
+            
+            // Show cart items and total price
+            function showCart() {
+            let cartSection = document.getElementById('cartItems');
+            cartSection.innerHTML = '';  // Clear previous items
+            let totalPrice = 0; // Initialize total price
+            
+            cart.forEach((item, index) => {
+                cartSection.innerHTML += `
+                    <div class="cartItem">
+                        <img src="${item.image}" alt="cart image">
+                        <p>${item.description} - Size: ${item.size}, Color: ${item.color} - Price: $${item.price}</p>
+                        <span class="remove-btn" onclick="removeFromCart(${index})">Remove</span>
+                    </div>
+                `;
+                totalPrice += parseFloat(item.price); // Accumulate total price
+            });
+            
+            document.getElementById('totalPrice').innerText = "Total Price: $" + totalPrice.toFixed(2); // Display total price
+            document.getElementById('cartDetailsSection').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+            }
+            
+            
+                // Remove item from cart
+                function removeFromCart(index) {
+                    cart.splice(index, 1); // Remove the item from the cart array
+                    localStorage.setItem('cart', JSON.stringify(cart)); // Update local storage
+                    showCart(); // Refresh the cart display
+                }
+            
+                // Hide cart
+                function hideCart() {
+                    document.getElementById('cartDetailsSection').style.display = 'none';
+                    document.getElementById('overlay').style.display = 'none';
+                }
+            </script>
+    </body>
+    </html>
+    

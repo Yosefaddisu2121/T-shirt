@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            table
+        </title>
+        <style>
+            table{
+        width: 25%;
+    }
+    th{
+        background-color: blue;
+        text-align: left;
+        font-size: 30px;
+    }
+    table,tr,th,td{
+        border:2px solid;
+        border-collapse: collapse;
+    }
+    table tr:nth-child(3){
+        background-color: gray;
+    }
+        </style>
+    </head>
+    <body>
+        <table>
+        <tr>
+            <th>company</th>
+            <th colspan="2">product</th>
+        </tr>
+        <tr>
+            <td rowspan="2">LG</td>
+            <td>TV</td>
+            <td>MOBILE</td>
+        </tr>
+        <tr>
+<td>REFREGITER</td>
+<td>TV</td>
+  </tr>
+  <tr>
+    <td >SAMSUNG</td>
+<td>PHONE</td>
+<td>TV</td>
+</tr>
+        </table>
+    </body>
+</html>

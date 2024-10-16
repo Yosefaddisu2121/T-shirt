@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            inline
+        </title>
+        <style>
+            @keyframes changeImage {
+                0% { content: url('images (1).jpg'); }
+                50% { content: url('images (2).jpg'); }
+                100% { content: url('images (3).jpg'); }
+            }
+            .auto-change {
+                width: 100%;
+                height: 600px;
+                animation: changeImage 20s infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="images (1).jpg" alt="model" class="auto-change">
+    </body>
+</html>

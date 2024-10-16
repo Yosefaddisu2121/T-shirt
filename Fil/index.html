@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro T-Shirt Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   <style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;  /* Ensures header stays on top */
+    /* Slight transparency */
+    padding: 20px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav{
+    float: right;
+}
+ul:hover{
+    color:aqua;
+}
+
+header .search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('g.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative; 
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #f44336;
+    padding: 15px 30px;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Featured Categories */
+.featured-categories {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.featured-categories h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.category-item {
+    flex: 1;
+    position: relative;
+}
+
+.category-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.category-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Trending Products */
+.trending-products {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.trending-products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-item {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-item p {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.add-to-cart-button {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #388E3C;
+}
+
+/* Promo Section */
+.promo {
+    background-image: url('k.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+}
+
+.promo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.promo p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Customer Reviews */
+.reviews {
+    padding: 50px 0;
+    background-color: white;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.review-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.review-item {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer .footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 10px;
+}
+
+.payment-icons img {
+    width: 40px;
+    margin: 0 10px;
+}
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo"><img src="Free Vector _ Flat design clothing store logo design.jpeg" alt="logo" style="width: 60px;">&nbsp;&nbsp;Pro T-Shirt Shop</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="Login.html">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="Login.html" style="background-color:black;">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover Your Style in Every Stitch</h1>
+                <p>Explore the latest trends in T-Shirts with high-quality fabrics and unique designs.</p>
+                <a href="Login.html" class="cta-button">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2>Featured Collections</h2>
+            <div class="categories-grid">
+                <div class="category-item">
+                    <img src="m.jpeg" alt="Men's T-Shirts">
+                    <a href="Login.html" class="category-button">Men's Collection</a>
+                </div>
+                <div class="category-item">
+                    <img src="Women's Easter Graphic Print Short Sleeve T-Shirt.jpeg" alt="Women's T-Shirts">
+                    <a href="Login.html" class="category-button">Women's Collection</a>
+                </div>
+                <div class="category-item">
+                    <img src="New women's casual cotton love pattern short-sleeved T-shirt.jpeg" alt="Best Sellers">
+                    <a href="Login.html" class="category-button">Babies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products">
+        <div class="container">
+            <h2>Trending Now</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="o.jpeg" alt="T-shirt 1">
+                    <h3>Classic White Tee</h3>
+                    <p>$19.99</p>
+                    <a href="Login.html" class="add-to-cart-button">Add to Cart</a>
+                </div>
+                <div class="product-item">
+                    <img src="Girly Chic Personalized Baby Bodysuit.jpeg" alt="T-shirt 2">
+                    <h3>Graphic Print Tee</h3>
+                    <p>$24.99</p>
+                    <a href="Login.html" class="add-to-cart-button">Add to Cart</a>
+                </div>
+                <!-- Add more product items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Section -->
+   
+    <!-- Customer Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="review-grid">
+                <div class="review-item">
+                    <p>"Amazing quality! Love the feel of the fabric, will definitely buy again."</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+                <div class="review-item">
+                    <p>"Stylish and comfortable, great fit!"</p>
+                    <p>⭐⭐⭐⭐</p>
+                </div>
+                <!-- Add more reviews -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="login.html">Shop</a> | 
+                <a href="#">About Us</a> | 
+                <a href="#">Contact Us</a> 
+            </div>
+            <div class="payment-icons">
+                <img src="paypal.jpeg" alt="PayPal">
+                <img src="visa.jpeg" alt="Visa">
+                <!-- Add more payment icons -->
+            </div>
+            <div class="social-media">
+                <a href="#">Instagram</a> | 
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
