@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <link rel="stylesheet" href="kids.css">
+  <link rel="stylesheet" href="women.css">
 <link rel="stylesheet" href="ffal.css">
 </head>
 <body>
         <div class="discription">
          <pre><h1>Only,
-For Kids</h1>
+For Women</h1>
 <h2>Add your favourite
 to the cart
 </h2></pre>
@@ -311,8 +311,7 @@ to the cart
                 </div>
             </div>
             <script>
-                // Load cart from local storage on page load
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];  // Use existing cart or initialize empty array
+                let cart = JSON.parse(localStorage.getItem('cart')) || []; 
             
                 function showDetails(image, desc, price) {
                     document.getElementById('gejebaw').src = image;
@@ -321,7 +320,6 @@ to the cart
                     document.getElementById('detailsSection').style.display = 'block';
                     document.getElementById('overlay').style.display = 'block';
             
-                    // Store price temporarily to add to cart later
                     document.getElementById('loginForm').dataset.price = price;
                 }
                 function showPaymentCard() {
@@ -339,7 +337,7 @@ to the cart
                     document.getElementById('loginForm').reset();
                 }
             
-                // Add event listener for form submission to add items to cart
+                
                 document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             let selectedSize = document.getElementById('choices').value;
@@ -354,21 +352,21 @@ to the cart
                     color: selectedColor // Add selected color
                 };
                 cart.push(item);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                document.getElementById('message').innerText =  "Added to cart" + "\nsuccessfully! ";
+                localStorage.setItem('cart', JSON.stringify(cart)); 
+                document.getElementById('message').innerText = "Added to cart" + "\nsuccessfully! ";
             } else {
-                document.getElementById('message').innerText = "Please select "+"\nboth size and color.";
+                document.getElementById('message').innerText =  "Please select "+"\nboth size and color.";
             }
             });
-            document.getElementById('hoverLink').addEventListener('mouseenter', function() {// Dynamically change image
+            document.getElementById('hoverLink').addEventListener('mouseenter', function() {
                 document.getElementById('hoverDescription').innerText = 'The CVV number is the last three digits at the back of your card. For American Express cards, the CVV is a 4-digit number on the front of the card.'; // Change description
             });
             
-            // Show cart items and total price
+            
             function showCart() {
             let cartSection = document.getElementById('cartItems');
-            cartSection.innerHTML = '';  // Clear previous items
-            let totalPrice = 0; // Initialize total price
+            cartSection.innerHTML = ''; 
+            let totalPrice = 0; 
             
             cart.forEach((item, index) => {
                 cartSection.innerHTML += `
@@ -378,7 +376,7 @@ to the cart
                         <span class="remove-btn" onclick="removeFromCart(${index})">Remove</span>
                     </div>
                 `;
-                totalPrice += parseFloat(item.price); // Accumulate total price
+                totalPrice += parseFloat(item.price); 
             });
             
             document.getElementById('totalPrice').innerText = "Total Price: $" + totalPrice.toFixed(2); // Display total price

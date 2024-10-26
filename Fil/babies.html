@@ -4,153 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-        .discription{
-            float: left;
-            flex-wrap: wrap;
-            margin-top: calc(100% - 1050px);
-            margin-left: 50px;
-        }
-        .imagesofmens{
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            gap: 20px; /* Space between images */
-         /* Account for the categories section */
-            width:900px ;
-            margin-right: 50px;
-            float: right;
-        }
-        .ima {
-            width: 200px;
-            text-align: center; /* Center text inside the block */
-        }
-        .ima img{
-            flex-wrap: wrap;
-            width: 100%; /* Make the image fill its container */
-            height: 200px;
-            object-fit: cover;
-        }
-        a{
-        text-decoration: none;
-        color: black;
-    }
-    a:hover{
-        color:rgb(50, 157, 202);
-        width: max-content;
-
-    }
-   .ima:hover{
-    background-color:cornsilk;
-
-   }
-   .details {
-            display: none; /* Hide details initially */
-            position: fixed; /* Position fixed to center on screen */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the div */
-            width: 500px;
-            height: auto;
-            background-color:white;
-            padding: 20px;
-            z-index: 100; /* Make sure it's on top */
-            border-radius: 10px; /* Optional: Rounded corners */
-        }
-        .overlay {
-            display: none; /* Hide overlay initially */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(12, 0, 0, 0.7); /* Semi-transparent background */
-            z-index: 50; /* Below the details but above the content */
-        }
-        .goBackBtn {
-            margin-bottom: 10px;
-        }
-        .discprice{
-            float: right;
-            margin-right: 100px;
-            margin-top: 50px;
-        }
-        img {
-            width: 200px;
-            height: 200px;
-        }
-        .details{
-            display: none;
-            position:fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: auto;
-            background-color: azure;
-            padding: 20px;
-            z-index: 100;
-            border-radius: 10px;
-        }
-        .cartDetails {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            background-color: azure;
-            padding: 20px;
-            z-index: 100;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            max-height: 500px;  /* Set maximum height */
-            overflow-y: auto; 
-        }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(12, 0, 0, 0.7);
-            z-index: 50;
-        }
-        .discprice {
-            float: right;
-            margin-right: 100px;
-            margin-top: 50px;
-        }
-        .cartItem {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .cartItem img {
-            width: 100px;
-            height: 100px;
-        }
-        .remove-btn {
-            cursor: pointer;
-            color: red;
-        }
-        /* Styling for total price */
-        #totalPrice {
-            font-size: 18px;
-            text-align: right;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+  <link rel="stylesheet" href="babies.css">
 <link rel="stylesheet" href="ffal.css">
 </head>
 <body>
         <div class="discription">
          <pre><h1>Only,
-For Babies</h1><hr><h2>Add your favourite
- to the cart
+For Babies</h1>
+<h2>Add your favourite
+to the cart
 </h2></pre>
 <h3>Show cart:</h3>
             <a href="#" onclick="showCart()"><img src="cart.jpeg" alt="cart" style="height: 60px;width: 60px;"></a>
@@ -347,7 +209,7 @@ For Babies</h1><hr><h2>Add your favourite
             <img src="" alt="shirt img" id="gejebaw" style="height: 200px;width: 200px;">
             <div class="discprice">
                 <p id="description"></p>
-                <p id="price"></p> <!-- Price element added -->
+                <p id="price"></p> 
                 <form id="loginForm">
                     <h2>Select size: 
                         <select id="choices">
@@ -382,7 +244,7 @@ For Babies</h1><hr><h2>Add your favourite
             <h3 style="text-align: center; text-decoration: underline;">Cart Items</h3>
             <div id="cartItems"></div>
             <hr>
-            <p id="totalPrice"></p> <!-- Total price element added -->
+            <p id="totalPrice"></p> 
             <a href="#" onclick="showPaymentCard()"><button style="float: right;width: 200px;height: 50px;" onclick="">Payment method</button></a>
         </div>
         <form id="payform">
@@ -492,10 +354,10 @@ For Babies</h1><hr><h2>Add your favourite
                     color: selectedColor // Add selected color
                 };
                 cart.push(item);
-                localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to local storage
-                document.getElementById('message').innerText = "Added to cart successfully!";
+                localStorage.setItem('cart', JSON.stringify(cart)); 
+                document.getElementById('message').innerText =  "Added to cart" + "\nsuccessfully! ";
             } else {
-                document.getElementById('message').innerText = "Please select both size and color.";
+                document.getElementById('message').innerText =  "Please select "+"\nboth size and color.";
             }
             });
             document.getElementById('hoverLink').addEventListener('mouseenter', function() {// Dynamically change image

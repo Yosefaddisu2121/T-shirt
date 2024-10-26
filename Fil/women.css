@@ -1,0 +1,534 @@
+
+.discription{
+    float: left;
+    flex-wrap: wrap;
+    margin-top: calc(100% - 1050px);
+    margin-left: 50px;
+}
+.imagesofmens{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    width:900px ;
+    margin-right: 50px;
+    float: right;
+}
+.ima {
+    width: 200px;
+    text-align: center; 
+}
+.ima img{
+    flex-wrap: wrap;
+    width: 100%; /* Make the image fill its container */
+    height: 200px;
+    object-fit: cover;
+}
+a{
+text-decoration: none;
+color: black;
+}
+a:hover{
+color:rgb(50, 157, 202);
+width: max-content;
+
+}
+.ima:hover{
+background-color:cornsilk;
+
+}
+.details {
+    display: none; /* Hide details initially */
+    position: fixed; /* Position fixed to center on screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the div */
+    width: 500px;
+    height: auto;
+    background-color:white;
+    padding: 20px;
+    z-index: 100; /* Make sure it's on top */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+.overlay {
+    display: none; /* Hide overlay initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 50; /* Below the details but above the content */
+}
+.goBackBtn {
+    margin-bottom: 10px;
+}
+.discprice{
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+.details {
+    width: 85%; 
+}
+.discription{
+        
+    flex-wrap: wrap;
+    margin-top: 30%;
+
+}
+.discprice {
+    float: none;
+    margin-right: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+.overlay{
+    display: none; 
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(12, 0, 0, 0.7); 
+z-index: 50; 
+}
+.cartDetails {
+    width: 85%; 
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+.details{
+    display: none;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: auto;
+    background-color: azure;
+    padding: 20px;
+    z-index: 100;
+    border-radius: 10px;
+}
+.cartDetails {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: azure;
+    padding: 20px;
+    z-index: 100;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px;  /* Set maximum height */
+    overflow-y: auto; 
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 0, 0, 0.7);
+    z-index: 50;
+}
+.discprice {
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cartItem img {
+    width: 100px;
+    height: 100px;
+}
+.remove-btn {
+    cursor: pointer;
+    color: red;
+}
+#totalPrice {
+    font-size: 18px;
+    text-align: right;
+    margin-top: 20px;
+    font-weight: bold;
+}
+button{
+    background-color: darkgoldenrod;
+}
+input{
+    background-color: darkgoldenrod;
+
+}
+select{
+    background-color: darkgoldenrod;
+
+}
+@media only screen and (max-width: 376px) {
+    .discription{
+        margin-top: 2%;
+        margin:center;
+    }
+    .ima img{
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+
+    }
+    ima{
+        width: 30px;
+    }
+    .imagesofmens{
+        width: 500px;
+    }
+    #detailsSection {
+        display: none; 
+        position: fixed; 
+        top: 30%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        height: 500px;
+        background-color:white;
+        padding: 20px;
+        z-index: 100; 
+        border-radius: 10px; 
+    }
+    .overlay {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7); /* Semi-transparent background */
+        z-index: 50; /* Below the details but above the content */
+    }
+    .goBackBtn {
+        margin-bottom: 10px;
+    }
+    .discprice{
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cartDetails {
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        transform: translateX(-50%);
+        width: 50%;
+        background-color: azure;
+        padding: 10px;
+        z-index: 100;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-height: 500px;
+        overflow-y: auto; 
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7);
+        z-index: 50;
+    }
+    .discprice {
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    .cartItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .cartItem img {
+        width: 100px;
+        height: 100px;
+    }
+    .remove-btn {
+        cursor: pointer;
+        color: red;
+    }
+    #totalPrice {
+        font-size: 18px;
+        text-align: right;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    #cartDetailsSection{
+        width: 70%;
+        left:35%;
+        top: 2%;
+    }
+    .cartItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartItem img {
+        width: 75px;
+        height: 75px;
+    }
+}
+@media only screen and (min-width: 376px) {
+    .discription{
+        margin-top: 2%;
+        margin:center;
+    }
+    #cartDetailsSection{
+        width: 70%;
+        left:35%;
+        top: 2%;
+    }
+    .ima img{
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+
+    }
+    ima{
+        width: 30px;
+    }
+    .imagesofmens{
+        width: 500px;
+    }
+    .details {
+        display: none; 
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: auto;
+        background-color:white;
+        padding: 20px;
+        z-index: 100; 
+        border-radius: 10px; 
+    }
+    .overlay {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7); /* Semi-transparent background */
+        z-index: 50; /* Below the details but above the content */
+    }
+    .goBackBtn {
+        margin-bottom: 10px;
+    }
+    .discprice{
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cartDetails {
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        transform: translateX(-50%);
+        width: 50%;
+        background-color: azure;
+        padding: 10px;
+        z-index: 100;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-height: 500px;  /* Set maximum height */
+        overflow-y: auto; 
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7);
+        z-index: 50;
+    }
+    .discprice {
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    .cartItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .cartItem img {
+        width: 100px;
+        height: 100px;
+    }
+    .remove-btn {
+        cursor: pointer;
+        color: red;
+    }
+    #totalPrice {
+        font-size: 18px;
+        text-align: right;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    #cartDetailsSection{
+        width: 85%;
+        left:;
+    }
+    .cartItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartItem img {
+        width: 75px;
+        height: 75px;
+    }
+}
+@media only screen and (min-width: 500px) {
+    .discription{
+        margin-top: 2%;
+        margin:center;
+    }
+    #cartDetailsSection{
+        width: 70%;
+        left:35%;
+        top: 2%;
+    }
+    .ima img{
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+
+    }
+    ima{
+        width: 30px;
+    }
+    .imagesofmens{
+        width: auto;
+    }
+    .details {
+        display: none; 
+        position: fixed; 
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: auto;
+        background-color:white;
+        padding: 20px;
+        z-index: 100; 
+        border-radius: 10px; 
+    }
+    .overlay {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7); /* Semi-transparent background */
+        z-index: 50; /* Below the details but above the content */
+    }
+    .goBackBtn {
+        margin-bottom: 10px;
+    }
+    .discprice{
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cartDetails {
+        display: none;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        transform: translateX(-50%);
+        width: 50%;
+        background-color: azure;
+        padding: 10px;
+        z-index: 100;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-height: 500px;  /* Set maximum height */
+        overflow-y: auto; 
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(12, 0, 0, 0.7);
+        z-index: 50;
+    }
+    .discprice {
+        float: right;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    .cartItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .cartItem img {
+        width: 100px;
+        height: 100px;
+    }
+    .remove-btn {
+        cursor: pointer;
+        color: red;
+    }
+    #totalPrice {
+        font-size: 18px;
+        text-align: right;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+   
+    .cartItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartItem img {
+        width: 75px;
+        height: 75px;
+    }
+}
