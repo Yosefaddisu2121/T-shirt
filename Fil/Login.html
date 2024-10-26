@@ -118,9 +118,9 @@
     <div class="login-container">
         <div class="login-box">
             <h2>Login</h2>
-            <form action="login.php" method="POST">
+            <form id="loginForm" action="login.php" method="POST">
                 <div class="input-group">
-                    <input type="text" name="username" required>
+                    <input type="text" id="username" name="username" required>
                     <label>Username</label>
                 </div>
                 <div class="input-group">
@@ -134,5 +134,21 @@
             </form>
         </div>
     </div>
+    <script>
+         const loginForm = document.getElementById('loginForm');
+
+loginForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+    const username = document.getElementById('username').value;
+
+    
+    localStorage.setItem('username', username);
+    
+    
+    window.location.href = 'ffal.html';
+});
+    </script>
+    </script>
 </body>
 </html>
